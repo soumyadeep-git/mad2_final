@@ -1,11 +1,15 @@
 from flask import Flask, render_template
 
+
 app = Flask(__name__)
 
 # configure app
 app.config["DEBUG"] = True
 app.config["SECRET_KEY"] = "should-not-be-seen"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+
+import application.models
+
 
 
 @app.route("/")
